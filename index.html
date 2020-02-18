@@ -11,8 +11,11 @@
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/296fde5448.js" crossorigin="anonymous"></script>
 
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+
     <!--My CSS-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/style.css">
 
     <title>Sorting Visualiser</title>
 </head>
@@ -25,18 +28,27 @@
         </nav>
     </div>
 
-    <div id="visualiserControls" class="container text-center">
+    <div id="visualiserControls" class="flex-container text-center">
         <div class="row">
-            <div class="col-1"></div>
-            <div class="slidecontainer col">
+            <div class="slidecontainer col-4 controlsItem">
                 <input type="range" min="10" max="150" value="50" class="slider" id="colSlider">
             </div>
-            <div id="colCount" class="col"></div>
-            <div class="col">placeholder for dropdown</div>
-            <div>
-                <button type="button" class="btn btn-primary col"><i class="fas fa-sort-amount-down-alt"></i> Sort!</button>
+            <div id="colCount" class="col-4 controlsItem"></div>
+            <div class="dropdown col-4 controlsItem">
+                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Choose Algorithm
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" id="bubble-sort" href="#">Bubble Sort</a>
+                  <a class="dropdown-item" id="quick-sort" href="#">Quicksort</a>
+                </div>
             </div>
-            <div class="col-1"></div>
+            <div class = "col-6 controlsItem">
+                <button type="button" class="btn btn-primary btn-lg" id="sortBtn"><i class="fas fa-sort-amount-down-alt"></i> Sort!</button>
+            </div>
+            <div class = "col-6 controlsItem">
+                <button type="button" class="btn btn-success btn-lg" id="resetBtn"><i class="fas fa-redo"></i> Generate New Bars</button>
+            </div>
         </div>
     </div>
 
@@ -50,10 +62,12 @@
     <script src="bootstrap/bootstrap.min.js"></script>
 
     <!--Javascript for Algorithms-->
+    <script src="Algorithms/bubblesort.js"></script>
     <script src="Algorithms/quicksort.js"></script>
 
     <!--My JavaScript-->
-    <script src="script.js"></script>
+    <script src="src/columns.js"></script>
+    <script src="src/controls.js"></script>
     
 </body>
 </html>
