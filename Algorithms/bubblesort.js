@@ -1,6 +1,7 @@
 function bubbleSort(array) {
 
-    let bubbleAnimations = []   
+    let bubbleAnimations = [];
+    bubbleAnimations.length = 0;
         /*Above we are initialising array to store bars that need to be animated - in order
         right before a swap is performed in the bubble sort algorithm,
         we push the indexes of the two elements that are getting swapped into the bubbleAnimations array.

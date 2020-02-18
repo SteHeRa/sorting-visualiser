@@ -10,8 +10,8 @@ class bar {
     }
 }
 
-var slider = document.getElementById("colSlider");
-var output = document.getElementById("colCount");
+let slider = document.getElementById("colSlider");
+let output = document.getElementById("colCount");
 output.innerHTML = `${slider.value} Columns`; // Display the default slider value
 
 for(let i=0; i<50; i++){
@@ -32,7 +32,7 @@ slider.oninput = function() {
   while (chart.firstChild) {
       chart.removeChild(chart.firstChild);
   }
-  for(let i=0; i<this.value; i++){
+  for(let i=0; i<this.value; i++){      // Generating new bars when slider is moved
     let newCol = document.createElement('div');
     let newColValue = Math.floor(Math.random() * 700) + 1;
     cols[i] = new bar (newColValue, i, false, false);
